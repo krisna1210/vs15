@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="AngularAuthApp">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
+    <title>Color - Materialize</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+      
+     <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/prism.css" rel="stylesheet">
+    <link href="content/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+      <style>
+          body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      </style>
+  </head>
+  <body>
+    <header  data-ng-controller="indexController">
+      <nav class="top-nav" style="background-color:#4db6ac;" data-ng-hide="!authentication.isAuth">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Color</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed" data-ng-hide="!authentication.isAuth">
+        <li class="logo">CountryWide MIS
+            </li>
+        
+        <li class="bold" data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+        <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Dashboard</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">Forms</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li class="active"><a href="color.html">Form 1</a></li>
+                  <li><a href="grid.html">Form2</a></li>
+                </ul>
+              </div>
+            </li>
+              <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+              <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
+              <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+              <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+              <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Components</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="badges.html">Call type</a></li>
+                  <li><a href="buttons.html">Contactibility</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <main>
+        <div class="container">
+            <div data-ng-view="">
+            </div>
+</div>
+
+    </main>
+      <footer class="page-footer" style="background-color:#4db6ac;">
+      <div class="footer-copyright">
+        <div class="container">
+        © 2016 Digitization, All rights reserved.
+        
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+      <script src="scripts/js/jquery.js"></script>
+    <script src="scripts/js/jquery.timeago.min.js"></script>
+    <script src="scripts/js/prism.js"></script>
+    <script src="scripts/js/materialize.js"></script>
+    <script src="scripts/js/init.js"></script>
+      <!-- 3rd party libraries -->
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+      <script src="scripts/angular-local-storage.min.js"></script>
+      <script src="scripts/loading-bar.min.js"></script>
+      <!-- Load app main script -->
+      <script src="app/app.js"></script>
+      <!-- Load services -->
+      <script src="app/services/authInterceptorService.js"></script>
+      <script src="app/services/authService.js"></script>
+      <script src="app/services/ordersService.js"></script>
+      <!-- Load controllers -->
+      <script src="app/controllers/indexController.js"></script>
+      <script src="app/controllers/homeController.js"></script>
+      <script src="app/controllers/loginController.js"></script>
+      <script src="app/controllers/signupController.js"></script>
+      <script src="app/controllers/ordersController.js"></script>
+  </body>
+</html>

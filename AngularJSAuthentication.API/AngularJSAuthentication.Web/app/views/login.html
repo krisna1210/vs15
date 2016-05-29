@@ -1,0 +1,28 @@
+﻿<div class="col s6 m6 i6">
+        <form role="form" novalidate>
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Login</span>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate" data-ng-model="loginData.userName" required autofocus>
+                            <label for="last_name">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="password" class="form-control" data-ng-model="loginData.password" required>
+                            <label for="last_name">Password</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()">Login</button>
+                    <div data-ng-hide="message == ''" class="alert alert-danger">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
